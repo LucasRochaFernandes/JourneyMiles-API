@@ -10,6 +10,7 @@ public static class DependencyInjectionExtension
     public static void AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddScoped<ITravelOfferRepository, TravelOfferRepository>();
+        services.AddScoped<IRouteRepository, RouteRepository>();
 
         services.AddDbContext<AppDbContext>();
         var connectionString = configuration.GetConnectionString("DefaultConnection")!;

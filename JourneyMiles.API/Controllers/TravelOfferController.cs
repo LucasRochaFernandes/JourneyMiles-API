@@ -8,7 +8,7 @@ namespace JourneyMiles.API.Controllers;
 [ApiController]
 public class TravelOfferController : ControllerBase
 {
-    [HttpPost("create-travel-offer")]
+    [HttpPost]
     public async Task<IActionResult> Create(
         [FromBody] CreateTravelOfferRequest request,
         [FromServices] ICreateTravelOfferUseCase createTravelOfferUseCase)

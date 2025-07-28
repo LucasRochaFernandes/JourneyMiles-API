@@ -6,6 +6,6 @@ namespace JourneyMiles.API.Domain.Entities;
 public class Route
 {
     public Guid Id { get; set; } = Guid.NewGuid();
-    public string Origin { get; set; }
-    public string Destination { get; set; }
+    public string Origin { get; set; } = string.Empty;
+    public string Destination { get; set; } = string.Empty;
 }

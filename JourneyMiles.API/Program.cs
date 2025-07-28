@@ -1,12 +1,15 @@
 using JourneyMiles.API.Application;
 using JourneyMiles.API.Extensions;
+using JourneyMiles.API.Filters;
 using JourneyMiles.API.Infrastructure;
 using JourneyMiles.API.Infrastructure.Migrations;
 using JourneyMiles.API.Shared.Communication;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers();
+builder.Services.AddControllers(opt => opt.Filters.Add(typeof(ExceptionFilter)))
+     .AddJsonOptions(options => options.JsonSerializerOptions.Converters.Add(new JourneyMiles.API.Converters.StringConverter()));
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerConfiguration();
 builder.Services.AddInfrastructure(builder.Configuration);
