@@ -9,5 +9,6 @@ public static class DependencyInjectionExtension
     {
         services.AddScoped<ICreateTravelOfferUseCase, CreateTravelOfferUseCase>();
         services.AddScoped<ICreateRouteUseCase, CreateRouteUseCase>();
+        services.AddScoped<IListRouteUseCase, ListRouteUseCase>();
     }
 }

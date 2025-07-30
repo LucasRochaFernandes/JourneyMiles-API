@@ -15,4 +15,11 @@ public class RouteController : ControllerBase
         var result = await createRouteUseCase.Execute(request);
         return Created(string.Empty, new { Id = result });
     }
+
+    [HttpGet]
+    public async Task<IActionResult> List([FromServices] IListRouteUseCase useCase)
+    {
+        var result = await useCase.Execute();
+        return Ok(result);
+    }
 }

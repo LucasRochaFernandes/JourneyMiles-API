@@ -34,6 +34,11 @@ public class RouteRepository : IRouteRepository
         }
     }
 
+    public async Task<IEnumerable<Domain.Entities.Route>> List()
+    {
+        return await _appDbContext.Routes.ToListAsync();
+    }
+
     public void Update(Domain.Entities.Route entityRoute)
     {
         _appDbContext.Routes.Update(entityRoute);

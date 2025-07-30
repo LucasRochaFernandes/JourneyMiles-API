@@ -1,6 +1,7 @@
 ﻿using FluentMigrator.Runner;
 using JourneyMiles.API.Domain.Repositories;
 using JourneyMiles.API.Infrastructure.Repositories;
+using JourneyMiles.API.Infrastructure.Services;
 using System.Reflection;
 
 namespace JourneyMiles.API.Infrastructure;
@@ -21,5 +22,12 @@ public static class DependencyInjectionExtension
             .WithGlobalConnectionString(connectionString)
             .ScanIn(Assembly.Load("JourneyMiles.API")).For.All();
         });
+
+
+        services.AddStackExchangeRedisCache(options =>
+        {
+            options.Configuration = configuration.GetConnectionString("RedisConnection");
+        });
+        services.AddScoped<ICacheService, CacheService>();
     }
 }
