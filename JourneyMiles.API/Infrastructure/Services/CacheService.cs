@@ -23,6 +23,11 @@ public class CacheService : ICacheService
         return JsonSerializer.Deserialize<T>(cachedData)!;
     }
 
+    public async Task InvalidateCacheAsync(string key)
+    {
+        await _cache.RemoveAsync(key);
+    }
+
     public async Task SetCachedDataAsync<T>(string key, T data, TimeSpan expiration)
     {
         var options = new DistributedCacheEntryOptions

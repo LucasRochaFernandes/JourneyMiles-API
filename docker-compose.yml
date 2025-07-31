@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   journeymiles.api1: &app  
-    image: ${DOCKER_REGISTRY-}jorneymilesapi
+    image: journeymilesacr.azurecr.io/journeymilesapi:app1
     build:    
       context: .
       dockerfile: JourneyMiles.API/Dockerfile
@@ -17,7 +17,7 @@ services:
 
   journeymiles.api2:
     <<: *app
-    image: ${DOCKER_REGISTRY-}journeymilesapi:app2
+    image: journeymilesacr.azurecr.io/journeymilesapi:app2
     ports:
       - '57396:8080'
       - '57397:8081'

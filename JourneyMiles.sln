@@ -8,6 +8,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BC5845C8-2011-4E81-BF3E-2EE0F2E187AD}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
+		ilustration.png = ilustration.png
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JourneyMiles.UnitTests", "JourneyMiles.UnitTests\JourneyMiles.UnitTests.csproj", "{50547E6A-9A47-4493-AD02-5A3D1CEA1A30}"
